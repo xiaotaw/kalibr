@@ -51,7 +51,9 @@ void GridCalibrationTargetCheckerboard::initialize()
 {
   if (_options.showExtractionVideo) {
     cv::namedWindow("Checkerboard corners", CV_WINDOW_AUTOSIZE);
-    cvStartWindowThread();
+    // xiaotaw 20210206 refer to: https://github.com/ethz-asl/kalibr/issues/325
+    //cvStartWindowThread();
+    cv::waitKey(1);
   }
 }
 
